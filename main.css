@@ -1,0 +1,139 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Island Moments', cursive;
+  background: #000;
+  color: #b30000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+
+.web-bg {
+  position: absolute;
+  z-index: 0;
+  opacity: 0.9;
+  pointer-events: none;
+}
+
+.web-bg img {
+  width: 30vw;
+  max-height: 100vh;
+  object-fit: contain;
+}
+
+
+.top-right { top: 0; right: 0; }
+.bottom-left { bottom: 0; left: 0; }
+
+
+.swing {
+  animation: swing 6s ease-in-out infinite alternate;
+}
+
+@keyframes swing {
+  from { transform: rotate(0deg) translateY(0); }
+  to   { transform: rotate(3deg) translateY(10px); }
+}
+
+
+.overlay {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+}
+
+/* Лого */
+.logo img {
+  width: 135px; 
+  margin: 20px auto;
+  display: block;
+  cursor: pointer;
+}
+
+
+.glow-avatar img {
+  filter: drop-shadow(0 0 25px #fff) drop-shadow(0 0 50px #fff) drop-shadow(0 0 90px #fff);
+}
+
+
+.glow-white {
+  color: #fff;
+  text-shadow: 0 0 20px #fff, 0 0 40px #fff, 0 0 80px #fff;
+}
+
+.glow-red {
+  color: #b30000;
+  text-shadow: 0 0 20px #ff0000, 0 0 40px #ff0000, 0 0 80px #ff0000;
+}
+
+
+.fade-in {
+  opacity: 0;
+  animation: fadeIn 1s forwards;
+}
+.delay0 { animation-delay: 0.2s; }
+.delay1 { animation-delay: 0.5s; }
+.delay2 { animation-delay: 1s; }
+.delay3 { animation-delay: 1.5s; }
+.delay4 { animation-delay: 2s; }
+.delay5 { animation-delay: 2.5s; }
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+.links {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  margin: 40px 0;
+  align-items: center;
+}
+
+.links a {
+  font-size: 48px; 
+  color: #b30000;
+  text-decoration: none;
+  text-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000;
+  transition: color 0.3s ease, text-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.links a:hover {
+  color: #ff1a1a;
+  text-shadow: 0 0 25px #ff1a1a, 0 0 50px #ff1a1a, 0 0 80px #ff1a1a;
+  transform: scale(1.05);
+}
+
+
+.footer-text { margin-top: 25px; }
+
+.number {
+  font-size: 75px; 
+  margin: 15px 0;
+}
+
+.tag {
+  font-size: 48px; 
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .web-bg img {
+    width: 60vw;
+    opacity: 0.8;
+  }
+  .top-right { top: 10px; right: 10px; }
+  .bottom-left { bottom: 10px; left: 10px; }
+
+  .links a { font-size: 36px; }
+  .number { font-size: 54px; }
+  .tag { font-size: 36px; }
+  .logo img { width: 105px; }
+}
